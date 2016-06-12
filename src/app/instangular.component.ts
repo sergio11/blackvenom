@@ -3,6 +3,7 @@ import {CORE_DIRECTIVES} from '@angular/common';
 import { AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
 import { HomeComponent } from './+home';
 import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+import {HeaderComponent} from './header';
 import { TranslateService, TranslatePipe, TranslateLoader, TranslateStaticLoader} from 'ng2-translate/ng2-translate';
 
 
@@ -10,7 +11,7 @@ import { TranslateService, TranslatePipe, TranslateLoader, TranslateStaticLoader
   moduleId: module.id,
   selector: 'instangular-app',
   templateUrl: 'instangular.component.html',
-  directives: [AlertComponent, CORE_DIRECTIVES, ROUTER_DIRECTIVES],
+  directives: [AlertComponent, CORE_DIRECTIVES, ROUTER_DIRECTIVES, HeaderComponent],
   styleUrls: ['instangular.component.css'],
   pipes: [TranslatePipe]
 })
