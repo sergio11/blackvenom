@@ -15,8 +15,4 @@ describe('App: Instangular', () => {
     expect(app).toBeTruthy();
   }));
 
-  it('should have as title \'instangular works!\'',
-      inject([InstangularAppComponent], (app: InstangularAppComponent) => {
-    expect(app.title).toEqual('instangular works!');
-  }));
 });
