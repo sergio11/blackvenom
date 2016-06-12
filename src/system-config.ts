@@ -4,12 +4,16 @@
 /** Map relative paths to URLs. */
 const map: any = {
   'moment': 'vendor/moment/moment.js',
-  'ng2-bootstrap': 'vendor/ng2-bootstrap'
+  'ng2-bootstrap': 'vendor/ng2-bootstrap',
+  'ng2-translate': 'vendor/ng2-translate'
 };
 
 /** User packages configuration. */
 const packages: any = {
   'vendor/ng2-bootstrap': {
+    defaultExtension: 'js'
+  },
+  'vendor/ng2-translate': {
     defaultExtension: 'js'
   }
 
@@ -28,6 +32,7 @@ const barrels: string[] = [
   '@angular/router',
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
+  '@angular/router-deprecated',
 
   // Thirdparty barrels.
   'rxjs',
@@ -35,6 +40,7 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/+home',
   /** @cli-barrel */
 ];
 

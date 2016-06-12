@@ -21,6 +21,7 @@ module.exports = function(defaults) {
           'rxjs/**/*.+(js|js.map)',
           '@angular/**/*.+(js|js.map)',
           'ng2-bootstrap/**/*.js',
+          'ng2-translate/**/*.js',
           'moment/moment.js'
         ]
   });
