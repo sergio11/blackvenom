@@ -2,22 +2,26 @@ import { Component } from '@angular/core';
 import {CORE_DIRECTIVES} from '@angular/common';
 import { AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
 import { HomeComponent } from './+home';
-import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+import { LoginComponent } from './+login';
 import {HeaderComponent} from './header';
 import { TranslateService, TranslatePipe, TranslateLoader, TranslateStaticLoader} from 'ng2-translate/ng2-translate';
+import { SignupComponent } from './+signup';
+import { Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
 
 
 @Component({
   moduleId: module.id,
   selector: 'instangular-app',
   templateUrl: 'instangular.component.html',
-  directives: [AlertComponent, CORE_DIRECTIVES, ROUTER_DIRECTIVES, HeaderComponent],
+  directives: [AlertComponent, CORE_DIRECTIVES, HeaderComponent, ROUTER_DIRECTIVES],
   styleUrls: ['instangular.component.css'],
-  pipes: [TranslatePipe]
+  pipes: [TranslatePipe],
+  providers: [ROUTER_PROVIDERS]
 })
-@RouteConfig([
-  {path: '/home', name: 'Home' , component: HomeComponent},
-  {path: '/**', redirectTo:['Home']}
+@Routes([
+  {path: '/', component: HomeComponent},
+  {path: '/login', component: LoginComponent},
+  {path: 'signup', component: SignupComponent}
 ])
 export class InstangularAppComponent {
   constructor(private translate: TranslateService) {
