@@ -5,7 +5,8 @@
 const map: any = {
   'moment': 'vendor/moment/moment.js',
   'ng2-bootstrap': 'vendor/ng2-bootstrap',
-  'ng2-translate': 'vendor/ng2-translate'
+  'ng2-translate': 'vendor/ng2-translate',
+  'angular2-fontawesome': 'vendor/angular2-fontawesome'
 };
 
 /** User packages configuration. */
@@ -15,7 +16,8 @@ const packages: any = {
   },
   'vendor/ng2-translate': {
     defaultExtension: 'js'
-  }
+  },
+  'angular2-fontawesome': { defaultExtension: 'js' }
 
 };
 
@@ -42,6 +44,8 @@ const barrels: string[] = [
   'app/shared',
   'app/+home',
   'app/header',
+  'app/+login',
+  'app/+signup',
   /** @cli-barrel */
 ];
 

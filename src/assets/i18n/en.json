@@ -1,4 +1,4 @@
 {
-    "HELLO": "hello {{value}}",
-    "INTRO": "This is a basic instagram clone powered by Angular2. To continue, please log in with your instagram account or create a new email account "
+    "INTRO": "This is a basic instagram clone powered by Angular2. To continue, please log in with your instagram account or create a new email account ",
+    "LOGIN": "Login"
 }

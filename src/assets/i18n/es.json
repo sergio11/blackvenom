@@ -1,4 +1,4 @@
 {
-    "HELLO": "Hola {{value}}",
-    "INTRO": "Esta es una pequeña copia de instagram realizada con Angular2. Para continuar, inicia sesión con tu cuenta de instagram o crea una nueva cuenta"
+    "INTRO": "Esta es una pequeña copia de instagram realizada con Angular2. Para continuar, inicia sesión con tu cuenta de instagram o crea una nueva cuenta",
+    "LOGIN": "Iniciar Sesión"
 }
