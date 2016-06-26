@@ -6,14 +6,14 @@ import { LoginComponent } from './+login';
 import {HeaderComponent} from './header';
 import { TranslateService, TranslatePipe, TranslateLoader, TranslateStaticLoader} from 'ng2-translate/ng2-translate';
 import { SignupComponent } from './+signup';
-import { Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
+import { Routes , ROUTER_PROVIDERS} from '@angular/router';
 
 
 @Component({
   moduleId: module.id,
   selector: 'instangular-app',
   templateUrl: 'instangular.component.html',
-  directives: [AlertComponent, CORE_DIRECTIVES, HeaderComponent, ROUTER_DIRECTIVES],
+  directives: [AlertComponent, CORE_DIRECTIVES, HeaderComponent],
   styleUrls: ['instangular.component.css'],
   pipes: [TranslatePipe],
   providers: [ROUTER_PROVIDERS]
