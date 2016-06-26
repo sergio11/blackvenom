@@ -1,0 +1,24 @@
+{
+  "name": "instangular",
+  "description": "A instagram clone with Angular2",
+  "main": "main.ts",
+  "authors": [
+    "Sergio Sánchez Sánchez <sss4esob@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Angular2"
+  ],
+  "homepage": "https://github.com/sergio11/instangular",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "animate-sass": "~0.6.6"
+  }
+}
