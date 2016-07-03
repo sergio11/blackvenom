@@ -13,20 +13,17 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <instangular-app>Loading...</instangular-app>
+  <instangular-app></instangular-app>
+  <div class="loading">
+    <h1>Loading...</h1>
+  </div>
 
-
-
-    {{#each scripts.polyfills}}<script src="{{.}}"></script>{{/each}}
+  {{#each scripts.polyfills}}<script src="{{.}}"></script>{{/each}}
     <script>
       System.import('system-config.js').then(function () {
         System.import('main');
       }).catch(console.error.bind(console));
     </script>
-
-
-
-
 
 </body>
 </html>
