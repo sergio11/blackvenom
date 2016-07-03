@@ -17,8 +17,7 @@
           <input [(ngModel)]="password" name="password"  class="form-control" id="password" type="password" placeholder="Password" required >
           <label class="form-control-feedback" for="password"><fa name="key" size="1" aria-hidden="true"></fa></label>
         </div>
-
-        <input type="submit" class="btn btn-block btn-success" value="Log in" />
+        <button type="submit" [disabled]="isLogging()" class="btn btn-block btn-success">Log in &nbsp;<span *ngIf="isLogging()" class="fa fa-spinner fa-pulse fa-fw"></span></button>
       </form>
       <br />
       <p class="text-center text-muted">

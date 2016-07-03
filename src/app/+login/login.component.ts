@@ -23,8 +23,12 @@ export class LoginComponent{
 
   public onSubmit(){
     console.log("Email: " + this.email + " Password : " + this.password);
-    this._loginStatus = LoginStatus.LOGIN_FAILED;
-    setTimeout(() => this._loginStatus = LoginStatus.NO_SUBMITED, LoginComponent.DISMISS_TIMEOUT);
+    this._loginStatus = LoginStatus.LOGING;
+    setTimeout(() => {
+      this._loginStatus = LoginStatus.LOGIN_FAILED;
+      setTimeout(() => this._loginStatus = LoginStatus.NO_SUBMITED, LoginComponent.DISMISS_TIMEOUT);
+    },4000);
+
   }
 
   public isLoginSuccess(){
@@ -33,6 +37,10 @@ export class LoginComponent{
 
   public isLoginFailed(){
     return this._loginStatus == LoginStatus.LOGIN_FAILED;
+  }
+
+  public isLogging(){
+    return this._loginStatus == LoginStatus.LOGING;
   }
 
 }
