@@ -6,10 +6,14 @@ import { FaComponent } from 'angular2-fontawesome/components';
 import {ROUTER_DIRECTIVES,provideRouter} from '@angular/router';
 import {TranslateService, TranslateLoader, TranslateStaticLoader} from 'ng2-translate/ng2-translate';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
+import { NgRedux } from 'ng2-redux';
+import { ACTION_PROVIDERS } from './app/modules';
 
 enableProdMode();
 
 bootstrap(InstangularAppComponent, [
+  NgRedux,
+  ACTION_PROVIDERS,
   HTTP_PROVIDERS,
   provide(PLATFORM_DIRECTIVES, { useValue: FaComponent, multi: true }),
   provide(PLATFORM_DIRECTIVES, { useValue: ROUTER_DIRECTIVES, multi: true }),
