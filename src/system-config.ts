@@ -40,12 +40,13 @@ const barrels: string[] = [
   'rxjs',
 
   // App specific barrels.
-  'app',
-  'app/shared',
-  'app/+home',
-  'app/header',
-  'app/+login',
-  'app/+signup',
+  'app/',
+  'app/components/',
+  'app/components/shared',
+  'app/components/+home',
+  'app/components/header',
+  'app/components/+login',
+  'app/components/+signup',
   /** @cli-barrel */
 ];
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {CORE_DIRECTIVES} from '@angular/common';
 import { AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
-import {HeaderComponent} from './header';
+import {HeaderComponent} from './components';
 import { TranslateService, TranslatePipe, TranslateLoader, TranslateStaticLoader} from 'ng2-translate/ng2-translate';
 
 
