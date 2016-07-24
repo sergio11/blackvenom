@@ -16,6 +16,7 @@ enum LoginStatus {
   styleUrls: ['login.component.css']
 })
 export class LoginComponent{
+  
   public static DISMISS_TIMEOUT: number = 3000;
   public email: string
   public password: string
