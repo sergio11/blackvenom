@@ -7,9 +7,9 @@ export class RootEpics {
 
   constructor(private sessionEpic: SessionEpics) {}
 
-  combineEpics(): Observable<IPayloadAction>{
+  combineEpics(): any{
     return combineEpics(
-      sessionEpic.login
+      this.sessionEpic.login
     );
   }
 

@@ -1,6 +1,6 @@
 import { reimmutifySession } from './session.transforms';
 
-export const INITIAL_STATE = reimmutifySession({
+export const SESSION_STATE = reimmutifySession({
   token: null,
   user: {},
   hasError: false,

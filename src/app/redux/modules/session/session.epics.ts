@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Action } from 'redux';
 import { Http } from '@angular/http';
 import { SessionActions } from './session.actions';
-import {IPayloadAction} from '../../';
+import { IPayloadAction } from '../../app.types';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
@@ -16,7 +17,7 @@ export class SessionEpics {
 
   constructor(private http: Http) {}
 
-  login = (action$: Observable<IPayloadAction>) => {
+  login = (action$: Observable<IPayloadAction>): any => {
     return action$.filter(({ type }) => type === SessionActions.LOGIN_USER)
       .flatMap(({ payload }) => {
         return this.http.post(SessionEpics.SIGNIN_ENDPOINT, payload)

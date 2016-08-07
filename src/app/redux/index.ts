@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { persistState } from 'redux-localstorage';
 import * as session from './modules/session';
-export * from './root.epics.ts';
+import { IAppState } from './app.types';
 export * from './app.types';
+export * from './root.epics.ts';
 
 //root reducer
 export const rootReducer = combineReducers<IAppState>({
@@ -23,12 +23,4 @@ export function reimmutify(plain) {
 
 export let middleware = [];
 
-export let enhancers = [
-  persistState(
-    '',
-    {
-      key: 'angular2-redux-seed',
-      serialize: store => JSON.stringify(deimmutify(store)),
-      deserialize: state => reimmutify(JSON.parse(state)),
-    })
-];
+export let enhancers = [];

@@ -7,7 +7,7 @@ import {ROUTER_DIRECTIVES,provideRouter} from '@angular/router';
 import {TranslateService, TranslateLoader, TranslateStaticLoader} from 'ng2-translate/ng2-translate';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import { NgRedux } from 'ng2-redux';
-import { ACTION_PROVIDERS } from './app/modules';
+import { ACTION_PROVIDERS } from './app/redux/modules';
 
 enableProdMode();
 

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
 import { select } from 'ng2-redux';
+import { Observable } from 'rxjs/Observable';
+import { SessionActions } from '../../redux/modules';
 
 
 @Component({
@@ -26,7 +28,7 @@ export class LoginComponent{
   constructor(private sessionActions: SessionActions){}
 
   public onSubmit(){
-    sessionActions.loginUser({ email, password });
+    this.sessionActions.loginUser({ email: this.email, password: this.password });
     console.log("Email: " + this.email + " Password : " + this.password);
   }
 

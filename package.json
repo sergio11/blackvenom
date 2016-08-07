@@ -45,7 +45,7 @@
     "node-sass": "^3.7.0",
     "protractor": "^3.3.0",
     "redux": "^3.4.0",
-    "redux-localstorage": "^0.4.0",
+    "redux-localstorage": "^0.4.1",
     "redux-logger": "^2.6.1",
     "redux-observable": "^0.7.2",
     "reflect-metadata": "0.1.3",
@@ -53,8 +53,9 @@
     "systemjs": "0.19.26",
     "ts-node": "^0.5.5",
     "tslint": "^3.6.0",
-    "zone.js": "^0.6.12",
     "typescript": "^1.8.10",
-    "typings": "^1.3.1"
+    "typings": "^1.3.1",
+    "zone.js": "^0.6.12",
+    "immutable": "^3.8.1"
   }
 }

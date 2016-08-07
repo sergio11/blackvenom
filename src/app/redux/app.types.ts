@@ -1,8 +1,9 @@
 import { Action } from 'redux';
+import { ISession } from './modules'
 
 //App State
 export interface IAppState {
-  session?: session.ISession;
+  session?: ISession;
 };
 
 //Play Load

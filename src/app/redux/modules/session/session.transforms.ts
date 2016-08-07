@@ -6,7 +6,7 @@ export function deimmutifySession(session: ISession): Object {
 
 export function reimmutifySession(plain: any): ISession {
   return new SessionRecord(
-    Object.assign(
+    (<any>Object).assign(
       {},
       plain,
       { user: UserRecord(plain.user) })) as ISession;

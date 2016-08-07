@@ -1,10 +1,9 @@
-import { Map } from 'immutable';
-import { IPayloadAction } from '../ipayload.action';
 import { SessionActions } from './session.actions';
 import { ISession, IUser, UserRecord } from './session.types';
-import { INITIAL_STATE } from './session.initial-state';
+import { SESSION_STATE } from './session.initial-state';
+import { IPayloadAction } from '../../app.types';
 
-export function sessionReducer(state: ISession = INITIAL_STATE, action: IPayloadAction): ISession {
+export function sessionReducer(state: ISession = SESSION_STATE, action: IPayloadAction): ISession {
 
   switch (action.type) {
     case SessionActions.LOGIN_USER:
@@ -29,7 +28,7 @@ export function sessionReducer(state: ISession = INITIAL_STATE, action: IPayload
         isLoading: false,
       });
     case SessionActions.LOGOUT_USER:
-      return INITIAL_STATE;
+      return SESSION_STATE;
     default:
       return state;
   }
