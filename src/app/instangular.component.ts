@@ -5,7 +5,7 @@ import {HeaderComponent} from './components';
 import { TranslateService, TranslatePipe, TranslateLoader, TranslateStaticLoader} from 'ng2-translate/ng2-translate';
 import { NgRedux, select } from 'ng2-redux';
 import { createEpicMiddleware } from 'redux-observable';
-import {rootReducer, rootEpic, middleware, enhancers} from './redux/'
+import {rootReducer, RootEpics, middleware, enhancers} from './redux/'
 
 @Component({
   moduleId: module.id,
@@ -19,7 +19,8 @@ export class InstangularAppComponent {
 
   constructor(
     private translate: TranslateService,
-    private ngRedux: NgRedux<IAppState>) {
+    private ngRedux: NgRedux<IAppState>,
+    private rootEpic: RootEpics) {
 
         var userLang = navigator.language.split('-')[0]; // use navigator lang if available
         userLang = /(fr|en)/gi.test(userLang) ? userLang : 'en';
@@ -30,7 +31,7 @@ export class InstangularAppComponent {
          // the lang to use, if the lang isn't available, it will use the current loader to get them
         translate.use(userLang);
 
-        middleware.push(createEpicMiddleware(rootEpic));
+        middleware.push(createEpicMiddleware(this.rootEpic.combineEpics));
         ngRedux.configureStore(rootReducer, {}, middleware, enhancers);
 
     }

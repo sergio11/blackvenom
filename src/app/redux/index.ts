@@ -1,17 +1,13 @@
 import { combineReducers } from 'redux';
-import { combineEpics } from 'redux-observable';
 import { persistState } from 'redux-localstorage';
-import * as session from './modules/session'
+import * as session from './modules/session';
+export * from './root.epics.ts';
 export * from './app.types';
 
 //root reducer
 export const rootReducer = combineReducers<IAppState>({
   session: session.sessionReducer
 });
-//root epic
-export const rootEpic = combineEpics(
-  session.SessionEpics
-);
 
 export function deimmutify(store) {
   return {

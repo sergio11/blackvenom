@@ -7,7 +7,7 @@ export class SessionActions {
 
   static LOGIN_USER = 'LOGIN_USER';
   static LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
-  static LOGIN_USER_ERROR = 'LOGIN_USER_ERROR';
+  static LOGIN_USER_ERROR = 'LOGIN_USER_ERROR';do np
   static LOGOUT_USER = 'LOGOUT_USER';
 
   constructor(private ngRedux: NgRedux<IAppState>) {}
