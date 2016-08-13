@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import {CORE_DIRECTIVES} from '@angular/common';
+import { CORE_DIRECTIVES } from '@angular/common';
 import { AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
-import {HeaderComponent} from './components';
+import { HeaderComponent } from './components';
 import { TranslateService, TranslatePipe, TranslateLoader, TranslateStaticLoader} from 'ng2-translate/ng2-translate';
-import { NgRedux, select } from 'ng2-redux';
+import { DevToolsExtension, NgRedux, select } from 'ng2-redux';
 import { createEpicMiddleware } from 'redux-observable';
-import {rootReducer, RootEpics, middleware, enhancers, IAppState} from './redux/'
+import { rootReducer, middleware, enhancers, IAppState, reimmutify } from './redux/'
+import { EPICS_PROVIDERS, SessionEpics } from './redux/modules';
+import { environment } from './environment';
 
 @Component({
   moduleId: module.id,
@@ -14,14 +16,15 @@ import {rootReducer, RootEpics, middleware, enhancers, IAppState} from './redux/
   directives: [AlertComponent, CORE_DIRECTIVES, HeaderComponent],
   styleUrls: ['instangular.component.css'],
   pipes: [TranslatePipe],
-  providers: [RootEpics]
+  providers: [EPICS_PROVIDERS]
 })
 export class InstangularAppComponent {
 
   constructor(
+    private devTools: DevToolsExtension,
     private translate: TranslateService,
     private ngRedux: NgRedux<IAppState>,
-    private rootEpic: RootEpics) {
+    private sessionEpic: SessionEpics) {
 
         var userLang = navigator.language.split('-')[0]; // use navigator lang if available
         userLang = /(fr|en)/gi.test(userLang) ? userLang : 'en';
@@ -32,7 +35,13 @@ export class InstangularAppComponent {
          // the lang to use, if the lang isn't available, it will use the current loader to get them
         this.translate.use(userLang);
 
-        middleware.push(createEpicMiddleware(this.rootEpic.combineEpics));
+        const enh = (!environment.production && devTools.isEnabled()) ?
+        [ ... enhancers, devTools.enhancer({
+          deserializeState: reimmutify,
+        }) ] :
+        enhancers;
+
+        //middleware.push(createEpicMiddleware(this.sessionEpic.login));
         this.ngRedux.configureStore(rootReducer, {}, middleware, enhancers);
 
     }

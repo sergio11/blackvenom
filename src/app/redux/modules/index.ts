@@ -3,6 +3,7 @@ import { sessionReducer, SessionActions, ISession, SessionEpics } from './sessio
 export const ACTION_PROVIDERS = [ SessionActions ];
 //export epics
 export const EPICS_PROVIDERS = [ SessionEpics ];
+export { SessionEpics }
 //export actions
 export { SessionActions };
 //export reducers

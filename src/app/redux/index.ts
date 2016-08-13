@@ -2,7 +2,6 @@ import { combineReducers } from 'redux';
 import * as session from './modules/session';
 import { IAppState } from './app.types';
 export * from './app.types';
-export * from './root.epics';
 
 //root reducer
 export const rootReducer = combineReducers<IAppState>({

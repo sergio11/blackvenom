@@ -42,7 +42,7 @@ const barrels: string[] = [
   '@angular/forms',
   // Thirdparty barrels.
   'rxjs',
-
+  'zone.js',
   // App specific barrels.
   'app/',
   'app/components/',
