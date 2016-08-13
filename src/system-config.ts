@@ -6,19 +6,23 @@ const map: any = {
   'moment': 'vendor/moment/moment.js',
   'ng2-bootstrap': 'vendor/ng2-bootstrap',
   'ng2-translate': 'vendor/ng2-translate',
-  'angular2-fontawesome': 'vendor/angular2-fontawesome'
+  'angular2-fontawesome': 'vendor/angular2-fontawesome',
+  'redux': 'vendor/redux/dist/redux.js',
+  'ng2-redux': 'vendor/ng2-redux/lib',
+  'redux-observable': 'vendor/redux-observable/dist/redux-observable.js',
+  'immutable': 'vendor/immutable/dist/immutable.min.js'
 };
 
 /** User packages configuration. */
 const packages: any = {
-  'vendor/ng2-bootstrap': {
-    defaultExtension: 'js'
-  },
-  'vendor/ng2-translate': {
-    defaultExtension: 'js'
-  },
-  'angular2-fontawesome': { defaultExtension: 'js' }
-
+  'ng2-bootstrap': { defaultExtension: 'js' },
+  'ng2-translate': { defaultExtension: 'js' },
+  'angular2-fontawesome': { defaultExtension: 'js' },
+  'ng2-redux': {
+    format: 'cjs',
+    defaultExtension: 'js',
+    main: 'index'
+  }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,6 +51,10 @@ const barrels: string[] = [
   'app/components/header',
   'app/components/+login',
   'app/components/+signup',
+  'app/redux',
+  'app/redux/modules',
+  'app/redux/modules/session',
+
   /** @cli-barrel */
 ];
 

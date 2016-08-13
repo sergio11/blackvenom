@@ -13,7 +13,8 @@ import {rootReducer, RootEpics, middleware, enhancers, IAppState} from './redux/
   templateUrl: 'instangular.component.html',
   directives: [AlertComponent, CORE_DIRECTIVES, HeaderComponent],
   styleUrls: ['instangular.component.css'],
-  pipes: [TranslatePipe]
+  pipes: [TranslatePipe],
+  providers: [RootEpics]
 })
 export class InstangularAppComponent {
 

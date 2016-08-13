@@ -1,6 +1,8 @@
-import { sessionReducer, SessionActions, ISession } from './session';
+import { sessionReducer, SessionActions, ISession, SessionEpics } from './session';
 //export action
 export const ACTION_PROVIDERS = [ SessionActions ];
+//export epics
+export const EPICS_PROVIDERS = [ SessionEpics ];
 //export actions
 export { SessionActions };
 //export reducers

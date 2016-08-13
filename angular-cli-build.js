@@ -5,7 +5,6 @@ var Angular2App = require('angular-cli/lib/broccoli/angular2-app');
 
 module.exports = function(defaults) {
 
-
   return new Angular2App(defaults, {
         sassCompiler: {
             includePaths: [
@@ -24,8 +23,12 @@ module.exports = function(defaults) {
           'ng2-translate/**/*.js',
           'moment/moment.js',
           'angular2-fontawesome/**/*.js',
-          'font-awesome/**/*.+(otf|eot|svg|ttf|woff|woff2)'
-
+          'font-awesome/**/*.+(otf|eot|svg|ttf|woff|woff2)',
+          'ng2-redux/**/*.js',
+          'redux/dist/redux.js',
+          'redux-observable/dist/*.js',
+          'rxjs/**/*.js',
+          'immutable/dist/**.js'
         ]
   });
 };

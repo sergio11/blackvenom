@@ -8,9 +8,7 @@ export class RootEpics {
   constructor(private sessionEpic: SessionEpics) {}
 
   combineEpics(): any{
-    return combineEpics(
-      this.sessionEpic.login
-    );
+    return combineEpics(this.sessionEpic.login);
   }
 
 }
