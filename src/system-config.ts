@@ -7,10 +7,7 @@ const map: any = {
   'ng2-bootstrap': 'vendor/ng2-bootstrap',
   'ng2-translate': 'vendor/ng2-translate',
   'angular2-fontawesome': 'vendor/angular2-fontawesome',
-  'redux': 'vendor/redux/dist/redux.js',
-  'ng2-redux': 'vendor/ng2-redux/lib',
-  'redux-observable': 'vendor/redux-observable/dist/redux-observable.js',
-  'immutable': 'vendor/immutable/dist/immutable.min.js'
+  '@ngrx': 'vendor/@ngrx'
 };
 
 /** User packages configuration. */
@@ -18,11 +15,14 @@ const packages: any = {
   'ng2-bootstrap': { defaultExtension: 'js' },
   'ng2-translate': { defaultExtension: 'js' },
   'angular2-fontawesome': { defaultExtension: 'js' },
-  'ng2-redux': {
-    format: 'cjs',
-    defaultExtension: 'js',
-    main: 'index'
-  }
+  '@ngrx/core': {
+    main: 'index.js',
+    format: 'cjs'
+   },
+  '@ngrx/store': {
+    main: 'index.js',
+    format: 'cjs'
+ }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -50,10 +50,7 @@ const barrels: string[] = [
   'app/components/+home',
   'app/components/header',
   'app/components/+login',
-  'app/components/+signup',
-  'app/redux',
-  'app/redux/modules',
-  'app/redux/modules/session',
+  'app/components/+signup'
 
   /** @cli-barrel */
 ];

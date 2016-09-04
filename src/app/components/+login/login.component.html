@@ -7,16 +7,17 @@
     </div>
     <div class="panel-body">
       <alert type="danger" *ngIf="hasError$ | async">Login Failed</alert>
-      <form name="loginForm" (ngSubmit)="onSubmit()" method="post" >
+      <form name="loginForm"  [formGroup]="group" (ngSubmit)="onSubmit()" method="post" >
         <div class="form-group has-feedback">
-          <input [(ngModel)]="email" name="email"  class="form-control" id="email" type="email" placeholder="Email" required >
+          <input [formControl]="email"  name="email"  class="form-control" id="email" type="email" placeholder="Email" required >
           <label class="form-control-feedback" for="email"><fa name="envelope-o" size="1" aria-hidden="true"></fa></label>
         </div>
-
+        <alert type="danger" [hidden]="!showEmailWarning()">Debes proporcionar un email válido</alert>
         <div class="form-group has-feedback">
-          <input [(ngModel)]="password" name="password"  class="form-control" id="password" type="password" placeholder="Password" required >
+          <input [formControl]="password" name="password"  class="form-control" id="password" type="password" placeholder="Password" required >
           <label class="form-control-feedback" for="password"><fa name="key" size="1" aria-hidden="true"></fa></label>
         </div>
+        <alert type="danger" [hidden]="!showPasswordWarning()">Debes proporcionar una constraseña</alert>
         <button type="submit" [disabled]="isLoading$ | async" class="btn btn-block btn-success">
           Log in &nbsp;<span *ngIf="isLoading$ | async" class="fa fa-spinner fa-pulse fa-fw"></span>
         </button>

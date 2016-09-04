@@ -24,11 +24,8 @@ module.exports = function(defaults) {
           'moment/moment.js',
           'angular2-fontawesome/**/*.js',
           'font-awesome/**/*.+(otf|eot|svg|ttf|woff|woff2)',
-          'ng2-redux/**/*.js',
-          'redux/dist/redux.js',
-          'redux-observable/dist/*.js',
           'rxjs/**/*.js',
-          'immutable/dist/**.js'
+          '@ngrx/**/*.+(js|js.map)'
         ]
   });
 };

@@ -9,7 +9,7 @@ import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import { DevToolsExtension, NgRedux } from 'ng2-redux';
 import { ACTION_PROVIDERS } from './app/redux/modules';
 
-if (environment.production) {
+if (!environment.production) {
   enableProdMode();
 } else {
   //import 'zone.js/dist/long-stack-trace-zone.min';
