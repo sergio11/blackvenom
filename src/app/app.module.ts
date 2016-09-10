@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
+import { runEffects } from '@ngrx/effects';
 /* App Root */
 import { AppComponent } from './app.component';
 /* Feature Modules */
