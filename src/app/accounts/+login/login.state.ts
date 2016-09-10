@@ -5,7 +5,7 @@ export interface ILoginState {
   isLoading: boolean,
 };
 
-export const initialState: LoginState = {
+export const initialState: ILoginState = {
   token: null,
   user: {},
   hasError: false,

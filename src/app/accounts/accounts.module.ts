@@ -1,23 +1,21 @@
-import { NgModule, OpaqueToken } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { EffectsModule } from '@ngrx/effects';
 import { SharedModule } from '../shared/shared.module';
 /* declarations */
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './+login/login.component';
+import { SignupComponent } from './+signup/signup.component';
 /* effects */
-import { SessionEffects } from './login/login.effects';
+import { SessionEffects } from './+login/login.effects';
 
-const EFFECTS = new OpaqueToken('Effects');
 
 @NgModule({
   imports: [
-    SharedModule
+    SharedModule,
+    EffectsModule.run(SessionEffects)
   ],
   declarations: [
     LoginComponent,
     SignupComponent
-  ],
-  providers: [
-     provide(EFFECTS, { multi: true, useClass: SessionEffects })
   ]
 })
-export class ContactModule { }
+export class AccountsModule { }

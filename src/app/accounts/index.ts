@@ -1,4 +1,4 @@
-import * as login from './login';
+import * as login from './+login';
 import { combineReducers } from '@ngrx/store';
 
  /**

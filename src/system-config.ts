@@ -19,10 +19,14 @@ const packages: any = {
     main: 'index.js',
     format: 'cjs'
    },
-  '@ngrx/store': {
-    main: 'index.js',
-    format: 'cjs'
- }
+   '@ngrx/store': {
+      main: 'index.js',
+      format: 'cjs'
+    },
+   '@ngrx/effects': {
+     main: 'index.js',
+     format: 'cjs'
+   }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -46,11 +50,7 @@ const barrels: string[] = [
   // App specific barrels.
   'app/',
   'app/components/',
-  'app/components/shared',
-  'app/components/+home',
-  'app/components/header',
-  'app/components/+login',
-  'app/components/+signup'
+  'app/components/shared'
 
   /** @cli-barrel */
 ];

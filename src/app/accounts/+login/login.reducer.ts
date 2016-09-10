@@ -1,19 +1,19 @@
 import { Action } from '@ngrx/store';
 import { initialState, ILoginState } from './login.state';
-import LoginActions from 'login.actions';
+import { LoginActions } from './login.actions';
 
 export function loginReducer(state: ILoginState = initialState, action: Action): ILoginState {
 
   switch (action.type) {
     case LoginActions.SIGNIN:
-      return state.merge({
+      return (<any>Object).assign(state, {
         token: null,
         user: {},
         hasError: false,
-        isLoading: true,
+        isLoading: true
       });
     case LoginActions.SIGNIN_SUCCESS:
-      return state.merge({
+      return (<any>Object).assign(state, {
         token: action.payload.token,
         //user: UserRecord(action.payload.profile),
         user: {},
@@ -21,7 +21,7 @@ export function loginReducer(state: ILoginState = initialState, action: Action):
         isLoading: false,
       });
     case LoginActions.SIGNIN_ERROR:
-      return state.merge({
+      return (<any>Object).assign(state, {
         token: null,
         user: {},
         hasError: true,
