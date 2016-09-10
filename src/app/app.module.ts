@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AccountsModule } from './accounts/accounts.module';
 /* root reducer */
 import { appReducer } from './app.reducers';
+import { routing, appRoutingProviders } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,11 @@ import { appReducer } from './app.reducers';
   imports: [
     BrowserModule,
     AccountsModule,
-    StoreModule.provideStore(appReducer)
+    StoreModule.provideStore(appReducer),
+    routing
+  ],
+  providers: [
+    appRoutingProviders
   ],
   bootstrap: [AppComponent]
 })
