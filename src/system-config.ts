@@ -12,6 +12,13 @@ const map: any = {
 
 /** User packages configuration. */
 const packages: any = {
+  'rxjs': {main: 'Rx'},
+  '@angular/core': {main: 'bundles/core.umd.min.js'},
+  '@angular/common': {main: 'bundles/common.umd.min.js'},
+  '@angular/compiler': {main: 'bundles/compiler.umd.min.js'},
+  '@angular/platform-browser': {main: 'bundles/platform-browser.umd.min.js'},
+  '@angular/platform-browser-dynamic': {main: 'bundles/platform-browser-dynamic.umd.min.js'},
+  '@angular/http': {main: 'bundles/http.umd.min.js'},
   'ng2-bootstrap': { defaultExtension: 'js' },
   'ng2-translate': { defaultExtension: 'js' },
   'angular2-fontawesome': { defaultExtension: 'js' },
@@ -29,6 +36,7 @@ const packages: any = {
    }
 };
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
  * Everything underneath this line is managed by the CLI.
@@ -42,7 +50,6 @@ const barrels: string[] = [
   '@angular/router',
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
-  '@angular/router-deprecated',
   '@angular/forms',
   // Thirdparty barrels.
   'rxjs',
@@ -50,7 +57,12 @@ const barrels: string[] = [
   // App specific barrels.
   'app/',
   'app/components/',
-  'app/components/shared'
+  'app/components/+home/',
+  'app/components/header',
+  'app/components/shared',
+  'app/accounts/',
+  'app/accounts/+login/',
+  'app/accounts/+signup/'
 
   /** @cli-barrel */
 ];
