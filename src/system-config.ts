@@ -3,7 +3,16 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  'moment': 'vendor/moment/moment.js',
+  'app': 'src/app',
+  'main': 'main.js',
+  '@angular/core': 'vendor/@angular/core/bundles/core.umd.js',
+  '@angular/common': 'vendor/@angular/common/bundles/common.umd.js',
+  '@angular/compiler': 'vendor/@angular/compiler/bundles/compiler.umd.js',
+  '@angular/platform-browser': 'vendor/@angular/platform-browser/bundles/platform-browser.umd.js',
+  '@angular/platform-browser-dynamic': 'vendor/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+  '@angular/http': 'vendor/@angular/http/bundles/http.umd.js',
+  '@angular/router': 'vendor/@angular/router/bundles/router.umd.js',
+  '@angular/forms': 'vendor/@angular/forms/bundles/forms.umd.js',
   'ng2-bootstrap': 'vendor/ng2-bootstrap',
   'ng2-translate': 'vendor/ng2-translate',
   'angular2-fontawesome': 'vendor/angular2-fontawesome',
@@ -12,13 +21,8 @@ const map: any = {
 
 /** User packages configuration. */
 const packages: any = {
-  'rxjs': {main: 'Rx'},
-  '@angular/core': {main: 'bundles/core.umd.min.js'},
-  '@angular/common': {main: 'bundles/common.umd.min.js'},
-  '@angular/compiler': {main: 'bundles/compiler.umd.min.js'},
-  '@angular/platform-browser': {main: 'bundles/platform-browser.umd.min.js'},
-  '@angular/platform-browser-dynamic': {main: 'bundles/platform-browser-dynamic.umd.min.js'},
-  '@angular/http': {main: 'bundles/http.umd.min.js'},
+  'app': {main: 'main', defaultExtension: 'js'},
+  'rxjs': {main: 'Rx.js', defaultExtension: 'js'},
   'ng2-bootstrap': { defaultExtension: 'js' },
   'ng2-translate': { defaultExtension: 'js' },
   'angular2-fontawesome': { defaultExtension: 'js' },
@@ -46,14 +50,13 @@ const barrels: string[] = [
   '@angular/core',
   '@angular/common',
   '@angular/compiler',
+  '@angular/forms',
   '@angular/http',
   '@angular/router',
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
-  '@angular/forms',
   // Thirdparty barrels.
   'rxjs',
-  'zone.js',
   // App specific barrels.
   'app/',
   'app/components/',
