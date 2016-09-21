@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   moduleId: module.id,
@@ -9,7 +10,17 @@ import { Observable } from 'rxjs/Observable';
 })
 export class LoginComponent{
 
-  constructor(){
+  public form: FormGroup;
+  public email: FormControl;
+  public password: FormControl;
+
+  constructor(formBuilder: FormBuilder){
+    this.email = new FormControl("", Validators.required);
+    this.password = new FormControl("", Validators.required);
+    this.form = formBuilder.group({
+      "email": this.email,
+      "password": this.password
+    });
   }
 
 }

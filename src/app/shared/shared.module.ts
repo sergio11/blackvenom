@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule }  from '@angular/forms';
+import { ReactiveFormsModule }  from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
+import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { routing } from '../app.routing';
 
 @NgModule({
   imports: [
@@ -16,9 +18,10 @@ import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-tra
   ],
   exports: [
     CommonModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
-    TranslateModule
+    TranslateModule,
+    Ng2BootstrapModule,
   ]
 })
 export class SharedModule { }

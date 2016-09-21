@@ -16,7 +16,8 @@ const map: any = {
   'ng2-bootstrap': 'vendor/ng2-bootstrap',
   'ng2-translate': 'vendor/ng2-translate',
   'angular2-fontawesome': 'vendor/angular2-fontawesome',
-  '@ngrx': 'vendor/@ngrx'
+  '@ngrx': 'vendor/@ngrx',
+  'moment': 'vendor/moment/min/moment.min.js'
 };
 
 /** User packages configuration. */
@@ -27,17 +28,17 @@ const packages: any = {
   'ng2-translate': { defaultExtension: 'js' },
   'angular2-fontawesome': { defaultExtension: 'js' },
   '@ngrx/core': {
+    main: 'bundles/core.min.umd.js',
+    format: 'cjs'
+  },
+  '@ngrx/store': {
+    main: 'bundles/store.min.umd.js',
+    format: 'cjs'
+  },
+  '@ngrx/effects': {
     main: 'index.js',
     format: 'cjs'
-   },
-   '@ngrx/store': {
-      main: 'index.js',
-      format: 'cjs'
-    },
-   '@ngrx/effects': {
-     main: 'index.js',
-     format: 'cjs'
-   }
+  }
 };
 
 
@@ -57,6 +58,9 @@ const barrels: string[] = [
   '@angular/platform-browser-dynamic',
   // Thirdparty barrels.
   'rxjs',
+  '@ngrx/core',
+  '@ngrx/store',
+  '@ngrx/effects',
   // App specific barrels.
   'app/',
   'app/components/',

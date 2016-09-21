@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { StoreModule } from '@ngrx/store';
 /* App Root */
 import { AppComponent } from './app.component';
@@ -12,6 +11,8 @@ import { routing, appRoutingProviders } from './app.routing';
 /* App declarations */
 import { HomeComponent } from './components/+home/';
 import { HeaderComponent } from './components/header/';
+/* Shared Module */
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,8 @@ import { HeaderComponent } from './components/header/';
     BrowserModule,
     AccountsModule,
     StoreModule.provideStore(appReducer),
-    routing,
-    Ng2BootstrapModule
+    SharedModule,
+    routing
   ],
   providers: [
     appRoutingProviders
