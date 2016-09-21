@@ -7,6 +7,8 @@ import { SignupComponent } from './+signup/signup.component';
 /* effects */
 import { SessionEffects } from './+login/login.effects';
 import { routing } from '../app.routing';
+/* services */
+import { LoginActions } from './+login/login.actions';
 
 @NgModule({
   imports: [
@@ -17,6 +19,9 @@ import { routing } from '../app.routing';
   declarations: [
     LoginComponent,
     SignupComponent
+  ],
+  providers: [
+    LoginActions
   ]
 })
 export class AccountsModule { }
