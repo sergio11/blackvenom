@@ -4,7 +4,7 @@ import { HomeComponent } from './components/+home/';
 
 
 const appRoutes: Routes = [
-  { path : '/', component: HomeComponent}
+  { path : '', component: HomeComponent}
   //{ path: '**', component: PageNotFoundComponent }
 ];
 
