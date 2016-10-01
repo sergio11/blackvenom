@@ -36,7 +36,7 @@ const packages: any = {
     format: 'cjs'
   },
   '@ngrx/effects': {
-    main: 'index.js',
+    main: 'bundles/effects.min.umd.js',
     format: 'cjs'
   }
 };

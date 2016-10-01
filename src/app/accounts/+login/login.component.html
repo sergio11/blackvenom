@@ -1,37 +1,38 @@
 <div class="container">
-  <div class="panel panel-default panel-form animated"  [ngClass]="{'shake': hasError$ | async}">
+  <div class="panel panel-default panel-form animated" >
     <div class="panel-heading">
         <h4 class="text-center">
           <span class="fa fa-sign-in"></span>&nbsp;Log in
         </h4>
     </div>
     <div class="panel-body">
-      <alert type="danger" *ngIf="hasError$ | async">Login Failed</alert>
+      <!--<alert type="danger" *ngIf="hasError$ | async">{{ 'LOGIN_FAILED' | translate }}</alert> -->
       <form name="loginForm"  [formGroup]="form" (ngSubmit)="onSubmit()" method="post" >
         <div class="form-group has-feedback">
           <input [formControl]="email"  name="email"  class="form-control" id="email" type="email" placeholder="Email" required >
           <label class="form-control-feedback" for="email"><span class="fa fa-envelope-o"></span></label>
         </div>
-        <alert type="danger" [hidden]="email.valid">Debes proporcionar un email válido</alert>
+        <alert type="danger" [hidden]="email.valid || email.pristine">{{ 'INVALID_EMAIL' | translate }}</alert>
         <div class="form-group has-feedback">
           <input [formControl]="password" name="password"  class="form-control" id="password" type="password" placeholder="Password" required >
           <label class="form-control-feedback" for="password"><span class="fa fa-key"></span></label>
         </div>
-        <alert type="danger" [hidden]="password.valid">Debes proporcionar una constraseña</alert>
-        <button type="submit" [disabled]="!form.valid || isLoading$ | async" class="btn btn-block btn-success">
-          Log in &nbsp;<span *ngIf="isLoading$ | async" class="fa fa-spinner fa-pulse fa-fw"></span>
+        <alert type="danger" [hidden]="password.valid || password.pristine">{{ 'INVALID_PASSWORD' | translate }}</alert>
+        <!-- [disabled]="!form.valid || isLoading$ | async" -->
+        <button type="submit"  class="btn btn-block btn-success">
+          {{ 'LOGIN_BTN' | translate }} &nbsp;<!--<span *ngIf="isLoading$ | async" class="fa fa-spinner fa-pulse fa-fw"></span> -->
         </button>
       </form>
       <br />
       <p class="text-center text-muted">
-        Don't have an account yet? <a [routerLink]="['/signup']">Sign up</a>
+        {{ 'NOT_ACCOUNT' | translate }} <a [routerLink]="['/signup']">{{ 'SIGNUP_BTN' | translate }}</a>
       </p>
       <div class="signup-or-separator">
           <h6 class="text">or</h6>
       </div>
       <hr>
-      <a class="btn btn-block btn-social btn-instagram">
-        <span class="fa fa-instagram"></span>&nbsp;Sign in with Instagram
+      <a class="btn btn-block btn-social btn-facebook">
+        <span class="fa fa-facebook"></span>&nbsp;{{ 'FACEBOOK_LOGIN' | translate }}
       </a>
     </div>
   </div>

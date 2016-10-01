@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { AccountsModule } from './accounts/accounts.module';
 /* root reducer */
 import { appReducer } from './app.reducers';
+/* initial state */
+import { appInitialState } from './app.state';
+/* routing */
 import { routing, appRoutingProviders } from './app.routing';
 /* App declarations */
 import { HomeComponent } from './components/+home/';
@@ -23,7 +26,7 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     AccountsModule,
-    StoreModule.provideStore(appReducer),
+    StoreModule.provideStore(appReducer, appInitialState),
     SharedModule,
     routing
   ],

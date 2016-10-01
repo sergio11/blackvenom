@@ -9,6 +9,10 @@ export interface AccountsState {
   session: login.ILoginState;
 }
 
+export const accountsInitialState: AccountsState = {
+  session: login.initialState
+}
+
 export const accountReducer = combineReducers({
   session: login.loginReducer
 });

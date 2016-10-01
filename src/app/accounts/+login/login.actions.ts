@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Action } from '@ngrx/store';
-
+import { ICredentials } from './login.types';
+import { Store } from '@ngrx/store';
 /**
  * Instead of passing around action string constants and manually recreating
  * action objects at the point of dispatch, we create services encapsulating
@@ -11,18 +11,21 @@ import { Action } from '@ngrx/store';
  */
 @Injectable()
 export class LoginActions {
+
+  constructor(private store: Store<any>){}
+
   static SIGNIN = "[SESSION] Signin user";
-  public signin(credentials: any): Action {
-    return {
+  public signin(credentials: ICredentials){
+    this.store.dispatch({
       type: LoginActions.SIGNIN,
       payload: credentials
-    };
+    });
   }
 
   static SIGNIN_SUCCESS = "[SESSION] Signin user success";
   static SIGNIN_ERROR = "[SESSION] Signin user error";
   static LOGOUT_USER = "[SESSION] Logout user";
   public logoutUser() {
-    return { type: LoginActions.LOGOUT_USER };
+    this.store.dispatch({ type: LoginActions.LOGOUT_USER });
   };
 }

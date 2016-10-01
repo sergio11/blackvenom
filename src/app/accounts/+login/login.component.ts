@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { LoginActions } from './login.actions';
+import { ICredentials } from './login.types';
+import { SessionSelectors } from './login.selector';
 
 @Component({
   moduleId: module.id,
@@ -14,13 +17,31 @@ export class LoginComponent{
   public email: FormControl;
   public password: FormControl;
 
-  constructor(formBuilder: FormBuilder){
+  public isLoading$: Observable<boolean>;
+  public hasError$: Observable<boolean>;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private loginActions: LoginActions,
+    private selectors: SessionSelectors
+  ){
     this.email = new FormControl("", Validators.required);
     this.password = new FormControl("", Validators.required);
-    this.form = formBuilder.group({
+    this.form = this.formBuilder.group({
       "email": this.email,
       "password": this.password
     });
+    this.isLoading$ = selectors.isLoading$();
+    this.hasError$ = selectors.hasError$();
+
+  }
+
+  public onSubmit(){
+    const credentials : ICredentials = {
+      email: this.email.value,
+      password: this.password.value
+    }
+    this.loginActions.signin(credentials);
   }
 
 }

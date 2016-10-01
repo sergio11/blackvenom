@@ -1,4 +1,11 @@
 {
     "INTRO": "Esta es una pequeña copia de instagram realizada con Angular2. Para continuar, inicia sesión con tu cuenta de instagram o crea una nueva cuenta",
-    "LOGIN": "Iniciar Sesión"
+    "LOGIN": "Iniciar Sesión",
+    "LOGIN_BTN": "Login",
+    "SIGNUP_BTN": "Registro",
+    "LOGIN_FAILED": "Usuario o contraseña no válidos",
+    "INVALID_EMAIL": "Debes proporcionar un email válido",
+    "INVALID_PASSWORD": "Debes proporcionar una constraseña",
+    "NOT_ACCOUNT": "¿No tienes una cuenta todavía?",
+    "FACEBOOK_LOGIN": "Iniciar sesión con Facebook"
 }
