@@ -1,12 +1,12 @@
 <div class="container">
-  <div class="panel panel-default panel-form animated" >
+  <div class="panel panel-default panel-form animated" [ngClass]="{'shake': hasError$ | async}" >
     <div class="panel-heading">
         <h4 class="text-center">
           <span class="fa fa-sign-in"></span>&nbsp;Log in
         </h4>
     </div>
     <div class="panel-body">
-      <!--<alert type="danger" *ngIf="hasError$ | async">{{ 'LOGIN_FAILED' | translate }}</alert> -->
+      <alert type="danger" *ngIf="hasError$ | async">{{ 'LOGIN_FAILED' | translate }}</alert>
       <form name="loginForm"  [formGroup]="form" (ngSubmit)="onSubmit()" method="post" >
         <div class="form-group has-feedback">
           <input [formControl]="email"  name="email"  class="form-control" id="email" type="email" placeholder="Email" required >
@@ -18,9 +18,9 @@
           <label class="form-control-feedback" for="password"><span class="fa fa-key"></span></label>
         </div>
         <alert type="danger" [hidden]="password.valid || password.pristine">{{ 'INVALID_PASSWORD' | translate }}</alert>
-        <!-- [disabled]="!form.valid || isLoading$ | async" -->
-        <button type="submit"  class="btn btn-block btn-success">
-          {{ 'LOGIN_BTN' | translate }} &nbsp;<!--<span *ngIf="isLoading$ | async" class="fa fa-spinner fa-pulse fa-fw"></span> -->
+<!--[disabled]="!form.valid || isLoading$ | async" -->
+        <button type="submit"   class="btn btn-block btn-success">
+          {{ 'LOGIN_BTN' | translate }} &nbsp;<span *ngIf="isLoading$ | async" class="fa fa-spinner fa-pulse fa-fw"></span>
         </button>
       </form>
       <br />

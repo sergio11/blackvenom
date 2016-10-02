@@ -17,13 +17,13 @@ export class LoginComponent{
   public email: FormControl;
   public password: FormControl;
 
-  public isLoading$: Observable<boolean>;
-  public hasError$: Observable<boolean>;
+  isLoading$: Observable<boolean>;
+  hasError$: Observable<boolean>;
 
   constructor(
     private formBuilder: FormBuilder,
     private loginActions: LoginActions,
-    private selectors: SessionSelectors
+    private sessionSelectors: SessionSelectors
   ){
     this.email = new FormControl("", Validators.required);
     this.password = new FormControl("", Validators.required);
@@ -31,8 +31,8 @@ export class LoginComponent{
       "email": this.email,
       "password": this.password
     });
-    this.isLoading$ = selectors.isLoading$();
-    this.hasError$ = selectors.hasError$();
+    this.isLoading$ = sessionSelectors.isLoading$();
+    this.hasError$ = sessionSelectors.hasError$();
 
   }
 

@@ -1,3 +1,4 @@
+import { environment } from '../../environment';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Effect, Actions } from '@ngrx/effects';
@@ -9,7 +10,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/catch';
-import { environment } from '../../environment';
+
 
 @Injectable()
 export class SessionEffects {
@@ -32,9 +33,6 @@ export class SessionEffects {
        // If successful, dispatch success action with result
       .map(res => ({ type: LoginActions.SIGNIN_SUCCESS, payload: res.json() }))
       // If request fails, dispatch failed action
-      .catch(res => {
-        console.log(res.json);
-        return Observable.of({ type: LoginActions.SIGNIN_ERROR });
-      })
+      .catch(res => Observable.of({ type: LoginActions.SIGNIN_ERROR, payload: res.json() }))
     );
 }
