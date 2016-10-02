@@ -16,6 +16,9 @@ import { HomeComponent } from './components/+home/';
 import { HeaderComponent } from './components/header/';
 /* Shared Module */
 import { SharedModule } from './shared/shared.module';
+/* dev tools */
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,13 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AccountsModule,
     StoreModule.provideStore(appReducer, appInitialState),
+    StoreDevtoolsModule.instrumentStore({
+      monitor: useLogMonitor({
+        visible: true,
+        position: 'right'
+      })
+    }),
+    StoreLogMonitorModule,
     SharedModule,
     routing
   ],

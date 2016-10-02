@@ -15,7 +15,6 @@ const map: any = {
   '@angular/forms': 'vendor/@angular/forms/bundles/forms.umd.js',
   'ng2-bootstrap': 'vendor/ng2-bootstrap',
   'ng2-translate': 'vendor/ng2-translate',
-  'angular2-fontawesome': 'vendor/angular2-fontawesome',
   '@ngrx': 'vendor/@ngrx',
   'moment': 'vendor/moment/min/moment.min.js'
 };
@@ -26,7 +25,6 @@ const packages: any = {
   'rxjs': {main: 'Rx.js', defaultExtension: 'js'},
   'ng2-bootstrap': { defaultExtension: 'js' },
   'ng2-translate': { defaultExtension: 'js' },
-  'angular2-fontawesome': { defaultExtension: 'js' },
   '@ngrx/core': {
     main: 'bundles/core.min.umd.js',
     format: 'cjs'
@@ -37,6 +35,14 @@ const packages: any = {
   },
   '@ngrx/effects': {
     main: 'bundles/effects.min.umd.js',
+    format: 'cjs'
+  },
+  '@ngrx/store-devtools': {
+    main: 'bundles/store-devtools.min.umd.js',
+    format: 'cjs'
+  },
+  '@ngrx/store-log-monitor': {
+    main: 'bundles/store-log-monitor.min.umd.js',
     format: 'cjs'
   }
 };
