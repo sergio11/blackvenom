@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule }  from '@angular/forms';
 import { HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
@@ -21,9 +21,10 @@ import { HttpClient } from '../services/httpclient.service';
       provide: Http,
       useFactory: (
         backend: XHRBackend,
-        defaultOptions: RequestOptions
-      ) => new HttpClient(backend, defaultOptions),
-      deps: [XHRBackend, RequestOptions]
+        defaultOptions: RequestOptions,
+        injector: Injector
+      ) => new HttpClient(backend, defaultOptions, injector),
+      deps: [XHRBackend, RequestOptions, Injector]
     }
   ],
   exports: [
