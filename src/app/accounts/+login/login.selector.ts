@@ -9,17 +9,13 @@ import { IAppState } from '../../app.state';
 @Injectable()
 export class SessionSelectors {
 
-  constructor(private store: Store<any>){}
-
-  private getSessionState$(state$: Observable<IAppState>): Observable<ILoginState>{
-    return state$.select(s => s.accounts.session);
-  }
+  constructor(private store: Store<IAppState>){}
 
   public isLoading$(): Observable<boolean> {
-    return this.store.let(this.getSessionState$).let((state$: Observable<ILoginState>): Observable<boolean> => state$.select(s => s.isLoading));
+    return this.store.select(state => state.accounts.session.isLoading);
   }
 
   public hasError$(): Observable<boolean> {
-      return this.store.let(this.getSessionState$).let((state$: Observable<ILoginState>): Observable<boolean> => state$.select(s => s.hasError));
+    return this.store.select(state => state.accounts.session.hasError);
   }
 }

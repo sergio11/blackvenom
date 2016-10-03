@@ -7,19 +7,18 @@
     </div>
     <div class="panel-body">
       <alert type="danger" *ngIf="hasError$ | async">{{ 'LOGIN_FAILED' | translate }}</alert>
-      <form name="loginForm"  [formGroup]="form" (ngSubmit)="onSubmit()" method="post" >
+      <form name="loginForm" novalidate [formGroup]="form" (ngSubmit)="onSubmit()" method="post" >
         <div class="form-group has-feedback">
-          <input [formControl]="email"  name="email"  class="form-control" id="email" type="email" placeholder="Email" required >
+          <input [formControl]="email"  name="email"  class="form-control" id="email" type="email" placeholder="Email" />
           <label class="form-control-feedback" for="email"><span class="fa fa-envelope-o"></span></label>
         </div>
         <alert type="danger" [hidden]="email.valid || email.pristine">{{ 'INVALID_EMAIL' | translate }}</alert>
         <div class="form-group has-feedback">
-          <input [formControl]="password" name="password"  class="form-control" id="password" type="password" placeholder="Password" required >
+          <input [formControl]="password" name="password"  class="form-control" id="password" type="password" placeholder="Password" />
           <label class="form-control-feedback" for="password"><span class="fa fa-key"></span></label>
         </div>
         <alert type="danger" [hidden]="password.valid || password.pristine">{{ 'INVALID_PASSWORD' | translate }}</alert>
-<!--[disabled]="!form.valid || isLoading$ | async" -->
-        <button type="submit"   class="btn btn-block btn-success">
+        <button type="submit"  [disabled]="!form.valid || (isLoading$ | async)" class="btn btn-block btn-success">
           {{ 'LOGIN_BTN' | translate }} &nbsp;<span *ngIf="isLoading$ | async" class="fa fa-spinner fa-pulse fa-fw"></span>
         </button>
       </form>
