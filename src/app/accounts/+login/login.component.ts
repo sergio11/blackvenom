@@ -11,7 +11,7 @@ import { SessionSelectors } from './login.selector';
   templateUrl: 'login.component.html',
   styleUrls: ['login.component.css']
 })
-export class LoginComponent{
+export class LoginComponent implements OnInit {
 
   public form: FormGroup;
   public email: FormControl;
@@ -25,15 +25,19 @@ export class LoginComponent{
     private loginActions: LoginActions,
     private sessionSelectors: SessionSelectors
   ){
+    
+    this.isLoading$ = sessionSelectors.isLoading$();
+    this.hasError$ = sessionSelectors.hasError$();
+
+  }
+
+  ngOnInit() {
     this.email = new FormControl("", Validators.required);
     this.password = new FormControl("", Validators.required);
     this.form = this.formBuilder.group({
       "email": this.email,
       "password": this.password
     });
-    this.isLoading$ = sessionSelectors.isLoading$();
-    this.hasError$ = sessionSelectors.hasError$();
-
   }
 
   public onSubmit(){

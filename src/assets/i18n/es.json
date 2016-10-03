@@ -7,5 +7,9 @@
     "INVALID_EMAIL": "Debes proporcionar un email válido",
     "INVALID_PASSWORD": "Debes proporcionar una constraseña",
     "NOT_ACCOUNT": "¿No tienes una cuenta todavía?",
-    "FACEBOOK_LOGIN": "Iniciar sesión con Facebook"
+    "FACEBOOK_LOGIN": "Iniciar sesión con Facebook",
+    "SIGNUP_INTRO": "Regístrate para ver fotos y vídeos de tus amigos.",
+    "SIGNUP_EMAIL_PLACEHOLDER": "Correo electrónico",
+    "SIGNUP_FULLNAME_PLACEHOLDER": "Nombre completo",
+    "SIGNUP_USERNAME_PLACEHOLDER": "Nombre de usuario"
 }

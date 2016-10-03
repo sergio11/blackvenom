@@ -7,5 +7,9 @@
     "INVALID_EMAIL": "email is required",
     "INVALID_PASSWORD": "password is required",
     "NOT_ACCOUNT": "¿No tienes una cuenta todavía?",
-    "FACEBOOK_LOGIN": "Sign in with Facebook"
+    "FACEBOOK_LOGIN": "Sign in with Facebook",
+    "SIGNUP_INTRO": "Register to view photos and videos of your friends.",
+    "SIGNUP_EMAIL_PLACEHOLDER": "email",
+    "SIGNUP_FULLNAME_PLACEHOLDER": "fullname",
+    "SIGNUP_USERNAME_PLACEHOLDER": "username"
 }

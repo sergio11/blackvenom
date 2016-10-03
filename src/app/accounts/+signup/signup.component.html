@@ -6,18 +6,28 @@
         </h4>
     </div>
     <div class="panel-body">
-      <form name="SignUpForm" action="" method="post">
+      <p class="text-center text-muted">{{ 'SIGNUP_INTRO' | translate }}</p>
+      <form name="SignupForm" novalidate [formGroup]="form" (ngSubmit)="onSubmit()" method="post">
+        <!-- email -->
         <div class="form-group has-feedback">
-          <input class="form-control" id="email" type="email" placeholder="Email">
+          <input [formControl]="email"  name="email"  class="form-control" id="email" type="email" placeholder="{{ 'SIGNUP_EMAIL_PLACEHOLDER' | translate }}" required >
           <label class="form-control-feedback" for="email"><span class="fa fa-envelope-o"></span></label>
         </div>
+        <!-- fullname -->
+        <div class="form-group has-feedback">
+          <input class="form-control" id="fullname" type="text" placeholder="{{ 'SIGNUP_FULLNAME_PLACEHOLDER' | translate }}">
+          <label class="form-control-feedback" for="fullname"><span class="fa fa-user"></span></label>
+        </div>
+        <!-- username -->
+        <div class="form-group has-feedback">
+          <input class="form-control" id="username" type="text" placeholder="{{ 'SIGNUP_USERNAME_PLACEHOLDER' | translate }}">
+          <label class="form-control-feedback" for="username"><span class="fa fa-user"></span></label>
+        </div>
+        <!-- username -->
         <div class="form-group has-feedback">
           <input class="form-control" id="password" type="password" placeholder="Password">
           <label class="form-control-feedback" for="password"><span class="fa fa-key"></span></label>
         </div>
-        <p class="text-center text-muted">
-          By clicking on Sign up, you agree to <a href="#">terms &amp; conditions</a> and <a href="#">privacy policy</a>
-        </p>
         <input type="submit" class="btn btn-block btn-primary" value="Sign up"/>
       </form>
       <br />

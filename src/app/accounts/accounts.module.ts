@@ -6,10 +6,12 @@ import { LoginComponent } from './+login/login.component';
 import { SignupComponent } from './+signup/signup.component';
 /* effects */
 import { SessionEffects } from './+login/login.effects';
+import { SignupEffects } from './+signup/signup.effects';
 /* selectors */
 import { SessionSelectors } from './+login/login.selector';
 /* services */
 import { LoginActions } from './+login/login.actions';
+import { SignupActions } from './+signup/signup.actions';
 /* routing */
 import { accountsRouting } from './accounts.routing';
 
@@ -17,6 +19,7 @@ import { accountsRouting } from './accounts.routing';
   imports: [
     SharedModule,
     EffectsModule.run(SessionEffects),
+    EffectsModule.run(SignupEffects),
     accountsRouting
   ],
   declarations: [
@@ -25,7 +28,8 @@ import { accountsRouting } from './accounts.routing';
   ],
   providers: [
     LoginActions,
-    SessionSelectors
+    SessionSelectors,
+    SignupActions
   ]
 })
 export class AccountsModule { }
