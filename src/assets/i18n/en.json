@@ -11,5 +11,6 @@
     "SIGNUP_INTRO": "Register to view photos and videos of your friends.",
     "SIGNUP_EMAIL_PLACEHOLDER": "email",
     "SIGNUP_FULLNAME_PLACEHOLDER": "fullname",
-    "SIGNUP_USERNAME_PLACEHOLDER": "username"
+    "SIGNUP_USERNAME_PLACEHOLDER": "username",
+    "SESSION_EXPIRED": "The session has expired, you must log on again"
 }

@@ -18,4 +18,9 @@ export class SessionSelectors {
   public hasError$(): Observable<boolean> {
     return this.store.select(state => state.accounts.session.hasError);
   }
+
+  public isExpired$(): Observable<boolean> {
+    return this.store.select(state => state.accounts.session.isExpired);
+  }
+
 }

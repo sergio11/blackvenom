@@ -28,4 +28,9 @@ export class LoginActions {
   public logoutUser() {
     this.store.dispatch({ type: LoginActions.LOGOUT_USER });
   };
+
+  static SESSION_EXPIRED = "[SESSION] Session expired";
+  public sessionExpired(){
+    this.store.dispatch({ type: LoginActions.SESSION_EXPIRED });
+  }
 }

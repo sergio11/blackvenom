@@ -19,17 +19,13 @@ export class LoginComponent implements OnInit {
 
   isLoading$: Observable<boolean>;
   hasError$: Observable<boolean>;
+  isExpired$: Observable<boolean>;
 
   constructor(
     private formBuilder: FormBuilder,
     private loginActions: LoginActions,
     private sessionSelectors: SessionSelectors
-  ){
-    
-    this.isLoading$ = sessionSelectors.isLoading$();
-    this.hasError$ = sessionSelectors.hasError$();
-
-  }
+  ){}
 
   ngOnInit() {
     this.email = new FormControl("", Validators.required);
@@ -38,6 +34,10 @@ export class LoginComponent implements OnInit {
       "email": this.email,
       "password": this.password
     });
+    //init observable
+    this.isLoading$ = this.sessionSelectors.isLoading$();
+    this.hasError$ = this.sessionSelectors.hasError$();
+    this.isExpired$ = this.sessionSelectors.isExpired$();
   }
 
   public onSubmit(){

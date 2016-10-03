@@ -10,7 +10,8 @@ export function loginReducer(state: ILoginState = initialState, action: Action):
         token: null,
         user: {},
         hasError: false,
-        isLoading: true
+        isLoading: true,
+        isExpired: false
       });
     case LoginActions.SIGNIN_SUCCESS:
       return (<any>Object).assign(state, {
@@ -19,6 +20,7 @@ export function loginReducer(state: ILoginState = initialState, action: Action):
         user: {},
         hasError: false,
         isLoading: false,
+        isExpired: false
       });
     case LoginActions.SIGNIN_ERROR:
       return (<any>Object).assign(state, {
@@ -26,9 +28,18 @@ export function loginReducer(state: ILoginState = initialState, action: Action):
         user: {},
         hasError: true,
         isLoading: false,
+        isExpired: false
       });
     case LoginActions.LOGOUT_USER:
       return initialState;
+    case LoginActions.SESSION_EXPIRED:
+      return (<any>Object).assign(state, {
+        token: null,
+        user: {},
+        hasError: false,
+        isLoading: false,
+        isExpired: true
+      });
     default:
       return state;
   }

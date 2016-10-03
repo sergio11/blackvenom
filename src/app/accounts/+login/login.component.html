@@ -7,6 +7,7 @@
     </div>
     <div class="panel-body">
       <alert type="danger" *ngIf="hasError$ | async">{{ 'LOGIN_FAILED' | translate }}</alert>
+      <alert type="danger" *ngIf="isExpired$ | async">{{ 'SESSION_EXPIRED' | translate }}</alert>
       <form name="loginForm" novalidate [formGroup]="form" (ngSubmit)="onSubmit()" method="post" >
         <div class="form-group has-feedback">
           <input [formControl]="email"  name="email"  class="form-control" id="email" type="email" placeholder="Email" />

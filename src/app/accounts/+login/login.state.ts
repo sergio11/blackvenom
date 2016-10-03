@@ -3,6 +3,7 @@ export interface ILoginState {
   user: any,
   hasError: boolean,
   isLoading: boolean,
+  isExpired: boolean
 };
 
 export const initialState: ILoginState = {
@@ -10,4 +11,5 @@ export const initialState: ILoginState = {
   user: {},
   hasError: false,
   isLoading: false,
+  isExpired: false
 };
