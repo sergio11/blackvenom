@@ -15,6 +15,7 @@ export class GalleryComponent implements OnInit {
   public options: MasonryOptions = {
     transitionDuration: '0.8s'
   };
+
   constructor() { }
 
   ngOnInit() {
