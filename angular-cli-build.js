@@ -25,7 +25,9 @@ module.exports = function(defaults) {
           'angular2-fontawesome/**/*.js',
           'font-awesome/**/*.+(otf|eot|svg|ttf|woff|woff2)',
           'rxjs/**/*.js',
-          '@ngrx/**/*.+(js|js.map)'
+          '@ngrx/**/*.+(js|js.map)',
+          'angular2-masonry/**/*.js',
+          'masonry-layout/**/*.js'
         ]
   });
 };

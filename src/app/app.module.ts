@@ -5,6 +5,7 @@ import { StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
 /* Feature Modules */
 import { AccountsModule } from './accounts/accounts.module';
+import { MasonryModule } from 'angular2-masonry';
 /* root reducer */
 import { appReducer } from './app.reducers';
 /* initial state */
@@ -14,6 +15,7 @@ import { routing, appRoutingProviders } from './app.routing';
 /* App declarations */
 import { HomeComponent } from './components/+home/';
 import { HeaderComponent } from './components/header/';
+import { GalleryComponent } from './components/gallery/';
 /* Shared Module */
 import { SharedModule } from './shared/shared.module';
 /* dev tools */
@@ -24,7 +26,8 @@ import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
     }),
     StoreLogMonitorModule,
     SharedModule,
-    routing
+    routing,
+    MasonryModule
   ],
   providers: [
     appRoutingProviders

@@ -7,11 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  param: String = "Sergio";
+  public images: any;
 
   constructor() {}
 
   ngOnInit() {
+    this.images = [
+     {title: 'Brick 1'},
+     {title: 'Brick 2'},
+     {title: 'Brick 3'},
+     {title: 'Brick 4'},
+     {title: 'Brick 5'},
+     {title: 'Brick 6'}
+   ]
   }
 
 }

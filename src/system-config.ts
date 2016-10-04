@@ -16,7 +16,9 @@ const map: any = {
   'ng2-bootstrap': 'vendor/ng2-bootstrap',
   'ng2-translate': 'vendor/ng2-translate',
   '@ngrx': 'vendor/@ngrx',
-  'moment': 'vendor/moment/min/moment.min.js'
+  'moment': 'vendor/moment/min/moment.min.js',
+  "angular2-masonry": "vendor/angular2-masonry",
+  "masonry-layout": "vendor/masonry-layout/dist/masonry.pkgd.js"
 };
 
 /** User packages configuration. */
@@ -44,7 +46,8 @@ const packages: any = {
   '@ngrx/store-log-monitor': {
     main: 'bundles/store-log-monitor.min.umd.js',
     format: 'cjs'
-  }
+  },
+  "angular2-masonry": { "defaultExtension": "js", "main": "index" }
 };
 
 
@@ -72,6 +75,7 @@ const barrels: string[] = [
   'app/components/',
   'app/components/+home/',
   'app/components/header',
+  'app/components/gallery',
   'app/components/shared',
   'app/accounts/',
   'app/accounts/+login/',
