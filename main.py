@@ -1,5 +1,6 @@
 import time
-from spoofer import ARPSpoofer
+
+from spoofer import BlackVenom
 
 
 def main():
@@ -9,11 +10,10 @@ def main():
     The script will keep spoofing until interrupted (Ctrl+C).
     Once interrupted, it will restore the ARP tables of the affected devices.
     """
-    spoofer = ARPSpoofer()
+    spoofer = BlackVenom()
 
-    # Define victim and gateway IPs dynamically
-    target_ip = "192.168.138.137"
-    gateway_ip = "192.168.138.2"
+    target_ip = "192.168.11.128"
+    gateway_ip = "192.168.11.2"
 
     try:
         while True:
