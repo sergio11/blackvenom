@@ -1,6 +1,6 @@
 import time
 
-from spoofer import BlackVenom
+from BlackVenom.BlackVenom import BlackVenom
 
 
 def main():
@@ -15,7 +15,7 @@ def main():
     target_ip = "192.168.11.128"
     gateway_ip = "192.168.11.2"
 
-    spoofer.spoofing(target_ip, gateway_ip)
+    spoofer.start_spoofing(target_ip, gateway_ip)
 
 if __name__ == "__main__":
     main()
