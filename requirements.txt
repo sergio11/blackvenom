@@ -2,3 +2,4 @@ scapy==2.6.0
 tqdm==4.65.0
 rich==13.9.2
 netifaces==0.11.0
+NetfilterQueue==1.1.0
