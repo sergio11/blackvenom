@@ -17,14 +17,23 @@ def main():
     
     # Arguments for DNS Spoofing
     parser.add_argument('--spoof_dns', action='store_true', help="Enable DNS spoofing.")
-    parser.add_argument('--attacker_ip', type=str, help="IP address to which DNS requests should be redirected (required if --spoof_dns is enabled).")
     parser.add_argument('--dns_queue_num', type=int, default=2, help="Queue number for DNS spoofing (default is 2).")
+    parser.add_argument('--dns_records', type=str, nargs='+', help="DNS records in the format 'domain=ip' to redirect DNS requests.")
 
     args = parser.parse_args()
 
-    # Validation to ensure attacker_ip is provided when spoof_dns is enabled
-    if args.spoof_dns and not args.attacker_ip:
-        parser.error("--attacker_ip is required when --spoof_dns is enabled.")
+    # Validate DNS records if spoofing is enabled
+    dns_records = {}
+    if args.spoof_dns:
+        if not args.dns_records:
+            parser.error("--dns_records is required when --spoof_dns is enabled.")
+        
+        for record in args.dns_records:
+            try:
+                domain, ip = record.split('=')
+                dns_records[domain.encode()] = ip  # Convert domain to bytes
+            except ValueError:
+                parser.error("DNS record must be in the format 'domain=ip'.")
 
     # Instantiate BlackVenom with all configurations
     black_venom = BlackVenom(
@@ -33,8 +42,7 @@ def main():
         dns_queue_num=args.dns_queue_num,
         enable_logging=args.enable_logging,
         log_file=args.log_file,
-        attacker_ip=args.attacker_ip,
-        spoof_dns=args.spoof_dns
+        dns_records=dns_records
     )
 
     # Start ARP Spoofing (and DNS Spoofing if enabled)

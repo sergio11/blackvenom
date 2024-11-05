@@ -5,7 +5,7 @@ from BlackVenom import __version__
 
 class BlackVenom:
     
-    def __init__(self, interface='eth0', logger_queue_num=1, dns_queue_num=2, enable_logging=False, log_file="captured_packets.pcap", attacker_ip=None, spoof_dns=False):
+    def __init__(self, interface='eth0', logger_queue_num=1, dns_queue_num=2, enable_logging=False, log_file="captured_packets.pcap", dns_records=None):
         """
         Initializes the BlackVenom tool with ARP spoofing, packet logging, and DNS spoofing capabilities.
 
@@ -15,24 +15,22 @@ class BlackVenom:
             dns_queue_num (int): Queue number for DNS spoofing.
             enable_logging (bool): Enables packet logging if True.
             log_file (str): Path to the pcap file for saving intercepted packets.
-            attacker_ip (str): IP address to redirect spoofed DNS requests (required if DNS spoofing is enabled).
-            spoof_dns (bool): Enables DNS spoofing if True and attacker IP is provided.
+            dns_records (dict): A dictionary of DNS records where keys are domain names (bytes) and values are attacker IPs (str).
         """
         self.interface = interface
         self.arp_spoofer = ArpSpoofer(interface)
         self.target_ip = None
         self.gateway_ip = None
-        self.attacker_ip = attacker_ip
-        self.spoof_dns = spoof_dns
+        self.dns_records = dns_records if dns_records is not None else {}
         self.dns_spoofer = None
         self._print_banner()
 
         # Initialize packet logger with a separate queue if logging is enabled
         self.packet_logger = PacketLogger(queue_num=logger_queue_num, pcap_file=log_file) if enable_logging else None
 
-        # Initialize DNS spoofer only if DNS spoofing is enabled and attacker IP is provided
-        if self.spoof_dns and self.attacker_ip:
-            self.dns_spoofer = DNSSpoofer(attacker_ip=self.attacker_ip, queue_num=dns_queue_num)
+        # Initialize DNS spoofer if dns_records are provided
+        if self.dns_records:
+            self.dns_spoofer = DNSSpoofer(targets=self.dns_records, queue_num=dns_queue_num)
 
     def start_spoofing(self, target_ip, gateway_ip):
         """
@@ -52,7 +50,7 @@ class BlackVenom:
             print("📄 Logging enabled. Starting packet logger...")
             self.packet_logger.start()
 
-        # Start DNS spoofing if it was enabled in the constructor
+        # Start DNS spoofing if it was initialized
         if self.dns_spoofer:
             print("🔀 DNS Spoofing enabled. Redirecting DNS requests to attacker IP...")
             self.dns_spoofer.start()
