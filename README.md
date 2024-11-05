@@ -4,10 +4,17 @@
 
 Built with stealth and precision in mind, **BlackVenom** operates like a digital venomous strike: fast, effective, and silent. 🖤 Whether you're conducting penetration tests, monitoring network vulnerabilities, or analyzing traffic for security research, **BlackVenom** empowers you to take full control of ARP tables and spoof DNS requests for educational and professional purposes. 🖥️💉
 
+🙏 I would like to express my sincere gratitude to [Santiago Hernández, a leading expert in Cybersecurity and Artificial Intelligence](https://www.udemy.com/user/shramos/). His outstanding course on **Cybersecurity and Ethical Hacking**, available on Udemy, was instrumental in the development of this project. The insights and techniques I gained from his course were invaluable in guiding my approach to cybersecurity practices. Thank you for sharing your knowledge and expertise!
+
+Join the BlackVenom web of digital defenders and harness the power of stealthy network manipulation for the greater good! 🕸️✨
+
 ### Disclaimer ⚠️
 BlackVenom is intended for ethical use only. Misuse of this tool against unauthorized systems is illegal and may result in severe penalties. Always obtain permission before testing network security. 📜
 
-Join the BlackVenom web of digital defenders and harness the power of stealthy network manipulation for the greater good! 🕸️✨
+<p align="center">
+  <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" />
+</p>
 
 ### Key Features:
 - **🌐 ARP Spoofing Mastery**: Perform bidirectional ARP spoofing to impersonate devices and intercept traffic between them. 🔄
