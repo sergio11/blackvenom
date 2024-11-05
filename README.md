@@ -21,6 +21,19 @@ Join the BlackVenom web of digital defenders and harness the power of stealthy n
 - **Educational Purposes**: Learn and teach network security concepts through practical, hands-on experience with ARP and DNS spoofing techniques. 🎓📚
 - **Traffic Analysis**: Monitor and capture traffic for forensic investigations or to understand user behavior on a network. 🔍📈
 
+
+### Dependencies 📦
+
+**BlackVenom** requires several Python packages to function effectively. Below are the key dependencies along with their respective versions:
+
+- **scapy==2.6.0** 🐍: A powerful Python library for network packet manipulation, allowing the creation, sending, and sniffing of network packets.
+- **tqdm==4.65.0** ⏳: A fast, extensible progress bar for Python, used to provide visual feedback during long-running tasks.
+- **rich==13.9.2** 🌈: A library for rich text and beautiful formatting in the terminal, enhancing the output of the tool with colors and styles.
+- **netifaces==0.11.0** 🌐: A cross-platform library to get network interface information, useful for identifying available interfaces for ARP spoofing.
+- **NetfilterQueue==1.1.0** 🔄: A Python binding to the netfilter queue library, allowing the manipulation of packets in user space for packet filtering and modification.
+
+Ensure that these dependencies are installed in your Python environment to use **BlackVenom** effectively. ✅
+
 ### Usage Examples
 
 #### Example 1: Basic ARP Spoofing
