@@ -90,6 +90,38 @@ These commands ensure that the traffic can flow through the machine while BlackV
 
 Ensure that these dependencies are installed in your Python environment to use **BlackVenom** effectively. ✅
 
+### Installation 🛠️
+
+To install and run **BlackVenom**, follow these simple steps:
+
+#### 1. Create a Python Virtual Environment 🐍
+First, create a virtual environment to manage dependencies:
+
+```bash
+python -m venv BlackVenom-Kali
+```
+
+#### 2. Activate the Virtual Environment 🔑
+Activate the virtual environment:
+
+```bash
+source BlackVenom-Kali/bin/activate
+```
+
+#### 3. Install Dependencies 📦
+Now, install the necessary dependencies from the requirements.txt file:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Run the Tool ⚡
+After installation, you can run BlackVenom using the provided CLI:
+
+```bash
+python black_venom_cli.py
+```
+
 ### Usage Examples
 
 #### Example 1: Basic ARP Spoofing
