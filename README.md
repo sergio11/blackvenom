@@ -210,6 +210,8 @@ Contributions to BlackVenom are highly encouraged! If you're interested in addin
 BlackVenom is developed and maintained by **Sergio Sánchez Sánchez** (Dream Software). Special thanks to the open-source community and the contributors who have made this project possible. If you have any questions, feedback, or suggestions, feel free to reach out at  [dreamsoftware92@gmail.com](mailto:dreamsoftware92@gmail.com).
 
 ## Visitors Count
+
+<img width="auto" src="https://profile-counter.glitch.me/blackvenom/count.svg" />
  
  ## Please Share & Star the repository to keep me motivated.
   <a href = "https://github.com/sergio11/blackvenom/stargazers">
