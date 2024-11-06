@@ -16,11 +16,19 @@ BlackVenom is intended for ethical use only. Misuse of this tool against unautho
   <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" />
 </p>
 
+<p align="center">
+  <img src="doc/screenshots/picture_1.PNG" />
+</p>
+
 ### Key Features:
 - **🌐 ARP Spoofing Mastery**: Perform bidirectional ARP spoofing to impersonate devices and intercept traffic between them. 🔄
 - **🔍 DNS Spoofing Capabilities**: Redirect DNS requests to specified IP addresses, enabling control over domain resolutions. 📡
 - **📄 Traffic Logging**: Capture and log all intercepted network traffic in a configurable PCAP file for later analysis. 📂
 - **⚙️ Ethical & Stealthy**: Designed for ethical hacking, ensuring you stay invisible while uncovering security flaws. 🕶️
+
+<p align="center">
+  <img src="doc/screenshots/picture_2.PNG" />
+</p>
 
 ### Use Cases:
 - **Network Penetration Testing**: Assess the security of networks by identifying weaknesses in ARP protocols and DNS resolutions. 🔍🛡️
@@ -28,11 +36,19 @@ BlackVenom is intended for ethical use only. Misuse of this tool against unautho
 - **Educational Purposes**: Learn and teach network security concepts through practical, hands-on experience with ARP and DNS spoofing techniques. 🎓📚
 - **Traffic Analysis**: Monitor and capture traffic for forensic investigations or to understand user behavior on a network. 🔍📈
 
+<p align="center">
+  <img src="doc/screenshots/picture_3.PNG" />
+</p>
+
 ### Understanding ARP Spoofing and DNS Spoofing 🔍
 
 - **ARP Spoofing**: This technique involves sending false ARP (Address Resolution Protocol) messages over a local area network. By doing so, an attacker can associate their MAC address with the IP address of another device (e.g., the default gateway), allowing them to intercept and manipulate traffic intended for that device. This can lead to various attacks, including man-in-the-middle attacks and session hijacking. ⚠️
 
 - **DNS Spoofing**: This technique manipulates DNS (Domain Name System) responses to redirect traffic from legitimate websites to malicious ones. By altering the DNS records, an attacker can control what IP addresses users are directed to when they attempt to access specific domains. This can be used to carry out phishing attacks or serve malicious content. 🌐
+
+<p align="center">
+  <img src="doc/screenshots/picture_4.PNG" />
+</p>
 
 ### IP Forwarding and IPTABLES 📡
 
