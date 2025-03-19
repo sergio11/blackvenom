@@ -8,9 +8,6 @@ Built with stealth and precision in mind, **BlackVenom** operates like a digital
 
 Join the BlackVenom web of digital defenders and harness the power of stealthy network manipulation for the greater good! 🕸️✨
 
-### Disclaimer ⚠️
-BlackVenom is intended for ethical use only. Misuse of this tool against unauthorized systems is illegal and may result in severe penalties. Always obtain permission before testing network security. 📜
-
 <p align="center">
   <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white" />
   <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" />
@@ -19,6 +16,16 @@ BlackVenom is intended for ethical use only. Misuse of this tool against unautho
 <p align="center">
   <img src="doc/screenshots/picture_1.PNG" />
 </p>
+
+## ⚠️ Disclaimer  
+
+**BlackVenom** was developed **exclusively for educational and research purposes** as part of my **learning experience in cybersecurity and ethical hacking**. This project serves as a **practical application of the knowledge acquired during a cybersecurity course**, allowing me to experiment in a **controlled lab environment** and include it in my **cybersecurity portfolio**.  
+
+This tool is intended **only for ethical and authorized security testing**. Any use **outside of legal and authorized environments**—such as penetration testing labs, cybersecurity research, or approved security assessments—is strictly **prohibited**.  
+
+**Unauthorized use of BlackVenom on external systems is illegal** and may violate laws.  
+
+**I assume no responsibility for misuse of this tool.** Always operate within **legal and ethical boundaries** and **obtain explicit permission before conducting any network security tests**.
 
 ## 🌟 **Explore My Other Open-Source Ethical Hacking Tools**
 
@@ -31,7 +38,7 @@ If you're interested in more powerful tools for ethical hacking, make sure to ch
 - [🔐 **DecryptX**](https://github.com/sergio11/decryptx): An **advanced hash and password security assessment tool** that empowers you to analyze **password hashes**, **encrypted ZIP files**, and more. Ideal for evaluating the strength of encryption and identifying weaknesses in **security implementations**.
 - [ 🌑 **EclipseRecon**](https://github.com/sergio11/eclipserecon): is a stealthy web reconnaissance tool for uncovering hidden vulnerabilities, subdomains, and site structures. 🕵️‍♂️🔍 It empowers security professionals to identify critical attack surfaces with precision, ensuring proactive defense. 🚨💻
 - [ 🌐 **ZoneGuardian**](https://github.com/sergio11/zoneguardian): A powerful tool to analyze DNS configurations, detect vulnerabilities, and generate actionable security reports. 🔒🚀 Safeguard your digital assets with precision and ease!
-- [🔍 **Retrospect**](https://github.com/sergio11/retrospect): A cutting-edge **reconnaissance and security analysis tool** that retrieves and analyzes historical web snapshots, helping you uncover past vulnerabilities and misconfigurations before they can be exploited today. Ideal for **ethical hackers** and **digital forensics experts**.
+- **Retrospect**: A cutting-edge **reconnaissance and security analysis tool** that retrieves and analyzes historical web snapshots, helping you uncover past vulnerabilities and misconfigurations before they can be exploited today. Ideal for **ethical hackers** and **digital forensics experts**.
 
 These tools are designed to streamline penetration testing, enhance security assessments, and provide in-depth insights into vulnerabilities. Explore them to level up your ethical hacking skills! 💻🔍
 
@@ -212,6 +219,16 @@ sudo python black_venom_cli.py \
 - **`--attacker_ip`**: IP to which DNS requests should be redirected. 🚀
 - **`--dns_queue_num`**: Queue number for DNS spoofing (default is `2`). 📊
 - **`--dns_records`**: DNS records in the format `'domain=ip'` to redirect requests. 📜
+
+## ⚠️ Disclaimer  
+
+**BlackVenom** was developed **exclusively for educational and research purposes** as part of my **learning experience in cybersecurity and ethical hacking**. This project serves as a **practical application of the knowledge acquired during a cybersecurity course**, allowing me to experiment in a **controlled lab environment** and include it in my **cybersecurity portfolio**.  
+
+This tool is intended **only for ethical and authorized security testing**. Any use **outside of legal and authorized environments**—such as penetration testing labs, cybersecurity research, or approved security assessments—is strictly **prohibited**.  
+
+**Unauthorized use of BlackVenom on external systems is illegal** and may violate laws.  
+
+**I assume no responsibility for misuse of this tool.** Always operate within **legal and ethical boundaries** and **obtain explicit permission before conducting any network security tests**.
 
 
 ## Acknowledgements 🙏
