@@ -47,7 +47,7 @@ Here’s an overview of some of my other key tools, each designed to enhance you
 
 - [🌑 **EclipseRecon**](https://github.com/sergio11/eclipserecon): A stealthy web reconnaissance tool designed to uncover hidden vulnerabilities, subdomains, and structures on websites. This tool provides an excellent opportunity to practice **web security analysis**, enabling you to identify attack surfaces and potential vulnerabilities in a web application.
 
-- [🌐 **ZoneGuardian**](https://github.com/sergio11/zoneguardian): This tool analyzes **DNS configurations**, detects security vulnerabilities, and generates **actionable security reports**. ZoneGuardian is a valuable resource for learning how to secure DNS configurations and protect against common DNS-based attacks.
+- **ZoneGuardian**: This tool analyzes **DNS configurations**, detects security vulnerabilities, and generates **actionable security reports**. ZoneGuardian is a valuable resource for learning how to secure DNS configurations and protect against common DNS-based attacks.
 
 - **Retrospect**: A cutting-edge tool that helps you analyze historical **web snapshots** to uncover past vulnerabilities and misconfigurations. Perfect for **digital forensics** experts and **ethical hackers**, **Retrospect** teaches you how to investigate web application histories to identify security flaws that might still be exploited today.
 
