@@ -29,28 +29,6 @@ This tool is intended **only for ethical and authorized security testing**. Any 
 
 **I assume no responsibility for misuse of this tool.** Always operate within **legal and ethical boundaries** and **obtain explicit permission before conducting any network security tests**.
 
-## 🌟 **Explore My Other Open-Source Ethical Hacking Tools**
-
-If you're passionate about ethical hacking and cybersecurity, be sure to check out my other open-source projects. These tools are designed to help you sharpen your skills, gain hands-on experience, and develop a deeper understanding of security principles. Whether you're a **beginner** or a **seasoned professional**, these projects offer practical learning opportunities for penetration testers, network administrators, and ethical hackers alike.
-
-Here’s an overview of some of my other key tools, each designed to enhance your ability to assess, analyze, and improve system security:
-
-- [🦅 **NetHawk**](https://github.com/sergio11/nethawk_analyzer): A cutting-edge **AI-powered ethical hacking tool** focused on **network vulnerability assessment**. By automating **port scanning**, **vulnerability detection**, and **report generation** using advanced tools like **Scapy** and **Nmap**, **NetHawk** streamlines the process of conducting security audits. It’s a great way to practice and improve your skills in assessing the security of networks.
-
-- [💀 **Nemesys**](https://github.com/sergio11/nemesys): This **post-exploitation** tool, built on top of the **Metasploit Framework**, automates crucial tasks like **data harvesting** and **system enumeration**. Perfect for learning how to automate post-exploitation tasks in penetration tests, **Nemesys** helps you understand how attackers gather intelligence after breaching a system.
-
-- [🕷️ **BlackVenom**](https://github.com/sergio11/blackvenom): **ARP** and **DNS spoofing** are common techniques used to intercept and manipulate network traffic. **BlackVenom** is designed for hands-on learning and experimentation with these powerful techniques to uncover vulnerabilities within networks while remaining undetected.
-
-- [🌐 **ZeroTrace**](https://github.com/sergio11/zero_trace_hacking_tool): A versatile **search engine dorking** tool that enables you to discover **attack vectors** and expose **sensitive information** across the web. **ZeroTrace** offers you the opportunity to explore how web searches can inadvertently leak sensitive data, a key concept for **web reconnaissance**.
-
-- 🔐 **DecryptX**: Learn how to assess **password hash security** and evaluate **encryption methods** with this advanced tool. **DecryptX** is essential for understanding how to analyze **encrypted ZIP files**, **password hashes**, and other security mechanisms, helping you gain insight into encryption vulnerabilities and weaknesses.
-
-- [🌑 **EclipseRecon**](https://github.com/sergio11/eclipserecon): A stealthy web reconnaissance tool designed to uncover hidden vulnerabilities, subdomains, and structures on websites. This tool provides an excellent opportunity to practice **web security analysis**, enabling you to identify attack surfaces and potential vulnerabilities in a web application.
-
-- **ZoneGuardian**: This tool analyzes **DNS configurations**, detects security vulnerabilities, and generates **actionable security reports**. ZoneGuardian is a valuable resource for learning how to secure DNS configurations and protect against common DNS-based attacks.
-
-- **Retrospect**: A cutting-edge tool that helps you analyze historical **web snapshots** to uncover past vulnerabilities and misconfigurations. Perfect for **digital forensics** experts and **ethical hackers**, **Retrospect** teaches you how to investigate web application histories to identify security flaws that might still be exploited today.
-
 ### Key Features of These Tools:
 - **🌐 ARP Spoofing Mastery**: Learn how to conduct **bidirectional ARP spoofing** to impersonate devices and intercept traffic between them. This is an important technique in **network penetration testing** and an essential skill for ethical hackers.
 
